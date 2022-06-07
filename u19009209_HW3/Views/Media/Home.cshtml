@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1>My Media</h1>
+
+<h5>Description</h5>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>Description</h2>
+            <p>This application stores different types of files. It also allows you to view these files along with downloading and deleting them.</p>
+        </div>
+        @using (Html.BeginForm("Home", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-lg-4">
+            <h2>Option selection</h2>
+            <div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" value="Document">Document</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" value="Image">Image</label>
+                </div>
+                <div class="radio disabled">
+                    <label><input type="radio" name="optradio" value="Video">Video</label>
+                </div>
+            </div>
+            <input type="file" class="form-control" name="file" />
+            <br />
+            <button class=" btn btn-success" type="submit"> Submit </button>
+            </div>
+        }
+    </div>
+</div>
+
